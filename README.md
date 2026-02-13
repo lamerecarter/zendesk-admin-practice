@@ -2,7 +2,10 @@
 ![Focus](https://img.shields.io/badge/Focus-Automations%20%7C%20Messaging%20%7C%20Security-brightgreen)
 ![Status](https://img.shields.io/badge/Project-Active-yellow)
 
-# LC-IT-Support — Zendesk Admin Practice Lab
+# LC-IT-Support | Zendesk Admin Practice Lab
+
+> End-to-end Zendesk Admin Center build simulating a 50–99 employee internal IT support environment.
+
 
 Hands-on Zendesk Admin Center build to simulate an internal IT support org (50–99 employees).  
 **Focus:** ticket workflow, channels, automations, intake fields, schedules, routing readiness, and security basics.
@@ -61,6 +64,17 @@ This repository documents my hands on practice project building a Zendesk enviro
 - **Hours:** Mon–Fri (Pacific Time), weekends closed  
 - **Holidays:** Thanksgiving, Memorial Day, Christmas  
 
+## Tools & Features Used
+
+- Zendesk Admin Center
+- Business Rules (Automations)
+- Ticket Fields & Forms
+- Messaging / Web Widget
+- Schedules & Holidays
+- Security Configuration
+
+---
+
 ## Walkthrough
 
 <a id="automations"></a>
@@ -69,7 +83,7 @@ Business Rules → Automations
 I built a simple automation designed to follow up with customers who haven’t responded after a set time.
 
 **Automation:** `Pending 3 Days Reminder to Customer`
-<img width="1144" height="1070" alt="Screenshot 2026-02-12 184258" src="https://github.com/user-attachments/assets/3d8682ef-b9e3-4ea4-bb6c-82aa4b966291" />
+<img width="900" height="1070" alt="Screenshot 2026-02-12 184258" src="https://github.com/user-attachments/assets/3d8682ef-b9e3-4ea4-bb6c-82aa4b966291" />
 
 
 **Conditions (example from build):**
@@ -85,8 +99,6 @@ I built a simple automation designed to follow up with customers who haven’t r
 **Why this matters:**
 This simulates a real IT/help desk workflow where tickets go “Pending” waiting on user input. Automated reminders prevent tickets from sitting stale and reduce agent workload.
 
----
-
 <a id="email-channel-setup"></a>
 ### 2) Email Channel Setup
 (Channels → Talk and email → Email)
@@ -96,11 +108,9 @@ I explored where Zendesk allows you to connect an existing support email address
 - Gmail connector
 - Authenticated SMTP connector
 - Email forwarding + authenticated SMTP
-<img width="1339" height="1063" alt="Screenshot 2026-02-12 184508" src="https://github.com/user-attachments/assets/fd228174-0223-41a2-af1d-aee5365d5d88" />
+<img width="900" height="1063" alt="Screenshot 2026-02-12 184508" src="https://github.com/user-attachments/assets/fd228174-0223-41a2-af1d-aee5365d5d88" />
 
 **Note:** I did not fully connect a mailbox in this practice step—my goal was to understand *where and how* that configuration would happen in a real implementation.
-
----
 
 <a id="messaging-web-widget"></a>
 ### 3) Messaging Web Widget
@@ -109,9 +119,7 @@ I configured the **Web Widget** and customized the chat experience:
 - Renamed channel name to: **Live Chat**
 - Updated widget branding color to an **aqua blue**
 - Preview-tested the widget inside Zendesk
-<img width="1352" height="1076" alt="Screenshot 2026-02-12 184656" src="https://github.com/user-attachments/assets/eceb1b94-7f37-43b2-9930-f8860ca3ae58" />
-
----
+<img width="900" height="1076" alt="Screenshot 2026-02-12 184656" src="https://github.com/user-attachments/assets/eceb1b94-7f37-43b2-9930-f8860ca3ae58" />
 
 <a id="chatbot-testing"></a>
 ### 4) Chatbot Testing
@@ -124,19 +132,15 @@ Example customer request:
 
 Zendesk responded with a connection message (“Connecting you with someone now.”), confirming the widget flow and ticket capture.
 
----
-
 <a id="ticket-email-notifications"></a>
 ### 5) Ticket + Email Notifications
 (Ticket Events)
 I verified that Zendesk generates email notifications when tickets are created, including:
 - Ticket received confirmation (unassigned vs assigned scenarios)
 - Ticket metadata in the email (ticket number, requester, channel, priority, brand)
-<img width="1876" height="973" alt="Screenshot 2026-02-12 185332" src="https://github.com/user-attachments/assets/443d4f41-c533-4704-8b5e-d7bfe9260d5d" />
+<img width="900" height="973" alt="Screenshot 2026-02-12 185332" src="https://github.com/user-attachments/assets/443d4f41-c533-4704-8b5e-d7bfe9260d5d" />
 
 This helped me understand how ticket creation routes into the agent workflow and what notifications can look like from the customer/agent side.
-
----
 
 <a id="ticket-fields"></a>
 ### 6) Ticket Fields
@@ -149,7 +153,7 @@ I created a **customer-editable dropdown field** to improve intake quality and c
 **Customer-facing description:** “Please select the reason you’re contacting our support”  
 **Permissions:** Customers can edit  
 **Required:** Required to submit a request
-<img width="1317" height="1053" alt="Screenshot 2026-02-12 185558" src="https://github.com/user-attachments/assets/04fa5099-8b57-4e84-b582-4636572d7b86" />
+<img width="900" height="1053" alt="Screenshot 2026-02-12 185558" src="https://github.com/user-attachments/assets/04fa5099-8b57-4e84-b582-4636572d7b86" />
 
 **Field values added:**
 - Tech support
@@ -158,8 +162,6 @@ I created a **customer-editable dropdown field** to improve intake quality and c
 
 **Why this matters:**
 Structured intake reduces back-and-forth and helps routing/triage (especially at scale).
-
----
 
 <a id="business-hours-holidays"></a>
 ### 7) Business Hours + Holidays
@@ -177,19 +179,15 @@ I configured a **schedule** including:
 **Why this matters:**
 Schedules influence SLA behavior, routing expectations, and “when” automations and response targets should apply.
 
----
-
 <a id="agent-status-real-time-channels"></a>
 ### 8) Agent Status + Real-Time Channels
 (Workflows Planning)
 Next, I began preparing to configure agent status behavior for real-time channels:
 - If an agent is **Online**, they can be notified / receive chats
 - If an agent is **Away/Offline**, requests should reroute to tickets or alternate queues (internally managed by Zendesk routing rules)
-<img width="1336" height="1056" alt="Screenshot 2026-02-12 190040" src="https://github.com/user-attachments/assets/6048bbe6-9248-4e74-91ab-4d6a8cf85779" />
+<img width="900" height="1056" alt="Screenshot 2026-02-12 190040" src="https://github.com/user-attachments/assets/6048bbe6-9248-4e74-91ab-4d6a8cf85779" />
 
 This is critical for realistic live support operations, ensuring customers don’t get stuck waiting when no agents are available.
-
----
 
 <a id="security-overview"></a>
 ### 9) Security Overview
@@ -199,11 +197,9 @@ I navigated to Zendesk’s security settings to identify where key controls are 
 - Password/authentication policy visibility and enforcement
 - Access controls and restrictions (e.g., blocking logins from certain countries)
 - Auditing and monitoring areas
-<img width="1334" height="1055" alt="Screenshot 2026-02-12 190124" src="https://github.com/user-attachments/assets/02514806-f8a3-4477-af33-83d756ac23df" />
+<img width="900" height="1055" alt="Screenshot 2026-02-12 190124" src="https://github.com/user-attachments/assets/02514806-f8a3-4477-af33-83d756ac23df" />
 
 For this practice environment, I kept defaults and focused on understanding where controls live and how to manage them.
-
----
 
 ## Key Takeaways
 - Zendesk separates configuration into clear areas: **Channels**, **Objects & rules**, **Workspaces**, and **Security**
@@ -212,7 +208,15 @@ For this practice environment, I kept defaults and focused on understanding wher
 - Schedules + holidays matter for realistic service expectations and SLA alignment
 - Even a basic build creates a real workflow: chat intake → ticket creation → notifications → pending → reminders → closure readiness
 
----
+
+## Operational Impact Simulation
+
+- Reduced stale pending tickets via 72-hour automation
+- Improved intake structure with required dropdown categorization
+- Configured SLA-aware business hours & holidays
+- Evaluated security posture (2FA, authentication controls)
+
+
 
 ## Next Steps
 - Configure omnichannel routing (queues, capacity rules, agent statuses)
