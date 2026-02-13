@@ -87,7 +87,9 @@ This simulates a real IT/help desk workflow where tickets go “Pending” waiti
 
 ---
 
-### 2) Email Channel Setup (Channels → Talk and email → Email)
+<a id="email-channel-setup"></a>
+### 2) Email Channel Setup
+(Channels → Talk and email → Email)
 I explored where Zendesk allows you to connect an existing support email address and confirmed the system supports multiple approaches (depending on org needs), such as:
 - Email forwarding
 - Microsoft Exchange connector
@@ -100,7 +102,9 @@ I explored where Zendesk allows you to connect an existing support email address
 
 ---
 
-### 3) Messaging/Web Widget (Channels → Messaging and social → Messaging)
+<a id="messaging-web-widget"></a>
+### 3) Messaging Web Widget
+(Channels → Messaging and social → Messaging)
 I configured the **Web Widget** and customized the chat experience:
 - Renamed channel name to: **Live Chat**
 - Updated widget branding color to an **aqua blue**
@@ -109,7 +113,9 @@ I configured the **Web Widget** and customized the chat experience:
 
 ---
 
-### 4) Chatbot Testing (Customer Simulation)
+<a id="chatbot-testing"></a>
+### 4) Chatbot Testing
+(Customer Simulation)
 I tested the chat experience end-to-end by submitting a realistic customer issue via the widget:
 
 Example customer request:
@@ -120,7 +126,9 @@ Zendesk responded with a connection message (“Connecting you with someone now.
 
 ---
 
-### 5) Ticket + Email Notifications (Ticket Events)
+<a id="ticket-email-notifications"></a>
+### 5) Ticket + Email Notifications
+(Ticket Events)
 I verified that Zendesk generates email notifications when tickets are created, including:
 - Ticket received confirmation (unassigned vs assigned scenarios)
 - Ticket metadata in the email (ticket number, requester, channel, priority, brand)
@@ -130,7 +138,9 @@ This helped me understand how ticket creation routes into the agent workflow and
 
 ---
 
-### 6) Ticket Fields (Objects and rules → Tickets → Fields)
+<a id="ticket-fields"></a>
+### 6) Ticket Fields
+(Objects and rules → Tickets → Fields)
 I created a **customer-editable dropdown field** to improve intake quality and categorization.
 
 **Field type:** Drop-down  
@@ -151,7 +161,9 @@ Structured intake reduces back-and-forth and helps routing/triage (especially at
 
 ---
 
-### 7) Business Hours + Holidays (Objects and rules → Schedules)
+<a id="business-hours-holidays"></a>
+### 7) Business Hours + Holidays
+(Objects and rules → Schedules)
 I configured a **schedule** including:
 - Time zone: **Pacific Time (US & Canada)**
 - Weekly hours set for business coverage (Mon–Fri)
@@ -167,7 +179,9 @@ Schedules influence SLA behavior, routing expectations, and “when” automatio
 
 ---
 
-### 8) Agent Status + Real-Time Channels (Workflows Planning)
+<a id="agent-status-real-time-channels"></a>
+### 8) Agent Status + Real-Time Channels
+(Workflows Planning)
 Next, I began preparing to configure agent status behavior for real-time channels:
 - If an agent is **Online**, they can be notified / receive chats
 - If an agent is **Away/Offline**, requests should reroute to tickets or alternate queues (internally managed by Zendesk routing rules)
@@ -177,7 +191,9 @@ This is critical for realistic live support operations, ensuring customers don�
 
 ---
 
-### 9) Security Overview (Account → Security → Security overview)
+<a id="security-overview"></a>
+### 9) Security Overview
+(Account → Security → Security overview)
 I navigated to Zendesk’s security settings to identify where key controls are managed, including:
 - Agent 2FA requirements
 - Password/authentication policy visibility and enforcement
