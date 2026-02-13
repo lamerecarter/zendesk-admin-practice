@@ -2,7 +2,7 @@
 ![Focus](https://img.shields.io/badge/Focus-Automations%20%7C%20Messaging%20%7C%20Security-brightgreen)
 ![Status](https://img.shields.io/badge/Project-Active-yellow)
 
-# LC-IT-Support | Zendesk Admin Practice Lab
+# LC-IT-Support | Zendesk Admin Lab
 
 > End-to-end Zendesk Admin Center build simulating a 50–99 employee internal IT support environment.
 
